@@ -109,11 +109,9 @@ where $\tau = 0$ by default (positive MNDWI indicates a water-dominated pixel;
 series of length $T$, split by a configurable temporal window $n$:
 
 $$
-\begin{aligned}
 W_{\%} &= \frac{\sum_{t=1}^{T} W_t}{T} \times 100 \\
 W_{\text{historic}} &= \sum_{t=1}^{n} W_t \\
 W_{\text{recent}} &= \sum_{t=T-n+1}^{T} W_t
-\end{aligned}
 $$
 
 The temporal change signal $\Delta W = W_{\text{recent}} - W_{\text{historic}}$ is
