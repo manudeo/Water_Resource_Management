@@ -115,7 +115,7 @@ W_{\text{recent}} &= \sum_{t=T-n+1}^{T} W_t
 $$
 
 The temporal change signal $\Delta W = W_{\text{recent}} - W_{\text{historic}}$ is
-used together with $W_{\%}$ and two user-adjustable wet-frequency thresholds
+used together with $W_{%}$ and two user-adjustable wet-frequency thresholds
 ($\theta_{\text{wet}}$, $\theta_{\text{persis}}$) to assign each pixel to one of
 six dynamics classes:
 
