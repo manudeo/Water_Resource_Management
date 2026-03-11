@@ -96,7 +96,13 @@ This module implements the basin-scale inventory and hydrodynamics framework of
 @singh2022basin. Given a multi-temporal MNDWI raster stack, each time step is first
 thresholded to a binary water-presence layer:
 
-$$W_{t} = \begin{cases} 1 & \text{if MNDWI}_{t} > \tau \\ 0 & \text{otherwise} \end{cases}$$
+$$
+W_{t} =
+\begin{cases}
+1 & \text{if } \mathrm{MNDWI}_{t} > \tau \\
+0 & \text{otherwise}
+\end{cases}
+$$
 
 where $\tau = 0$ by default (positive MNDWI indicates a water-dominated pixel;
 @xu2006modification). Three summary statistics are then derived across the full time
