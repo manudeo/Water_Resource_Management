@@ -52,9 +52,9 @@ GeoJSON area-of-interest inputs.
 
 # Statement of Need
 
-Wetlands cover roughly 5–8% of Earth's land surface and deliver ecosystem services
+Wetlands cover roughly 5–8percent of Earth's land surface and deliver ecosystem services
 valued at tens of trillions of dollars annually, yet global wetland area has declined
-by approximately 35% since 1970 [@davidson2014extent; @ramsar2018global]. Operational
+by approximately 35percent since 1970 [@davidson2014extent; @ramsar2018global]. Operational
 monitoring at basin to continental scales — tracking both inundation dynamics and
 biophysical surface conditions — is essential for conservation management, restoration
 prioritisation, and international reporting obligations under the Ramsar Convention.
@@ -108,24 +108,24 @@ where $\tau = 0$ by default (positive MNDWI indicates a water-dominated pixel;
 @xu2006modification). Three summary statistics are then derived across the full time
 series of length $T$, split by a configurable temporal window $n$:
 
-$$W_{\\%} = \frac{\sum_{t=1}^{T} W_t}{T} \times 100, \quad
+$$W_{\text{percent}} = \frac{\sum_{t=1}^{T} W_t}{T} \times 100, \quad
 W_{\text{historic}} = \sum_{t=1}^{n} W_t, \quad
 W_{\text{recent}} = \sum_{t=T-n+1}^{T} W_t$$
 
 The temporal change signal $\Delta W = W_{\text{recent}} - W_{\text{historic}}$ is
-used together with $W_{\\%}$ and two user-adjustable wet-frequency thresholds
+used together with $W_{\text{percent}}$ and two user-adjustable wet-frequency thresholds
 ($\theta_{\text{wet}}$, $\theta_{\text{persis}}$) to assign each pixel to one of
 six dynamics classes:
 
 | Class | Primary condition |
 |-------|------------------|
-| Persistent   | $W_{\%} \geq \theta_{\text{persis}}$ |
+| Persistent   | $W_{\text{percent}} \geq \theta_{\text{persis}}$ |
 | New          | $\Delta W = +n$ |
-| Intensifying | $W_{\%} \geq \theta_{\text{wet}}$; $\;0 < \Delta W < n$ |
-| Diminishing  | $W_{\%} \geq \theta_{\text{wet}}$; $\;-n < \Delta W < 0$ |
+| Intensifying | $W_{\text{percent}} \geq \theta_{\text{wet}}$; $\;0 < \Delta W < n$ |
+| Diminishing  | $W_{\text{percent}} \geq \theta_{\text{wet}}$; $\;-n < \Delta W < 0$ |
 | Lost         | $\Delta W = -n$ |
-| Intermittent | $W_{\%} \geq \theta_{\text{wet}}$; no directional trend |
-| Non-wetland  | $W_{\%} < \theta_{\text{wet}}$ |
+| Intermittent | $W_{\text{percent}} \geq \theta_{\text{wet}}$; no directional trend |
+| Non-wetland  | $W_{\text{percent}} < \theta_{\text{wet}}$ |
 
 The entire classification is implemented using vectorised `xr.where` operations,
 enabling chunked parallel execution via Dask with no Python-level pixel iteration.
@@ -153,7 +153,7 @@ The optional `wetlandmapper.gee` submodule supports all five Landsat missions (4
 missions for any requested date range with harmonised band names, enabling long-record
 analyses from 1982 to the present day. An optional `use_slc_off` parameter controls
 whether Landsat 7 images acquired after the 2003 Scan Line Corrector failure (which
-cause ~22% data gaps per scene) are included. Areas of interest may be provided as a
+cause ~22percent data gaps per scene) are included. Areas of interest may be provided as a
 GeoJSON dict, a shapefile path, or a GeoJSON file path; multi-feature shapefiles are
 dissolved to a single boundary automatically.
 
